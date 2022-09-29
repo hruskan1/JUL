@@ -39,11 +39,12 @@ function main()
     A = polynomial(a,x)
 end
 
-function extra()
-    #using GraphRecipes, Plots
+# function extra()
+#     #using GraphRecipes, Plots
 
-    A = circlemat(10)
-    graphplot(A)
-end
+#     A = circlemat(10)
+#     graphplot(A)
+# end
+
 main()
 
