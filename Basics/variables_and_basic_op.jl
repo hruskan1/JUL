@@ -56,13 +56,62 @@ p = 5
 
 y = ((x+2)^2 -4)/(x-2)^(p-2)
 print(y,'\n')
-print(x,' ',typeof(x),' ',p,' ',typeof(p))
+print(x,' ',typeof(x),' ',p,' ',typeof(p),'\n')
 xp,yp = promote(x,y)
-print(xp,' ',typeof(xp),' ',yp,' ',typeof(yp))
+print(xp,' ',typeof(xp),' ',yp,' ',typeof(yp),'\n') 
 
+x = 1
+y = 1f0
+z = true
+w = Int32(1)
+xp,yp,zp,wp = promote(x,y,z,w)
 
+promote_type(typeof(x), typeof(y), typeof(z), typeof(w))
 
+x = 5
+p = 3
+y = (x+4)^(3//2)/(x+1)^(p-1)
+y *= 8
+y += 3
+y /= 3
+y -= 1
 
+# == equal
+# != not equal
+# & bitwise and, | bitwise or
+# multiple conditions possible
+# 1 < 2 <= 2 < 3 == 3 > 2 >= 1 == 1 < 3 != 5 
+# ! Do not use:
+#  NaN == NaN
+#  NaN != NaN
+#  NaN < NaN
+# ! Use insted:
+# isequal(x, y)
+# isfinite(x)
+# isinf(x)
+# isnan(x)
 
+# round(x),floor(x),ceil(x),(trunc(x) - towards zero)
+x = 1252.1518
+ceil(Int64,x) # or Int64(ceil(x))
+floor(Int16,x) # or Int16(floor(x))
+round(x,digits=2)
+round(x,sigdigits=3)
+round(x,sigdigits=2)
 
+convert(Float32, 1.234)
+convert(Int64, 1.234) # error 
 
+x = 1//3
+y = 0.5
+
+# Strings
+
+str = "Hello world"
+str[1]
+typeof(str[1])
+Int('a')
+Char(120)
+str[1:5]
+typeof(str[1:5])
+str[[1,2,5,6]]
