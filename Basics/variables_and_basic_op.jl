@@ -110,8 +110,32 @@ y = 0.5
 str = "Hello world"
 str[1]
 typeof(str[1])
+str[1:1] # inclusive
+typeof(str[1:1])
 Int('a')
 Char(120)
 str[1:5]
 typeof(str[1:5])
 str[[1,2,5,6]]
+
+
+# careful about string injection 
+
+str1 = "This is how a string is created: \"string\"."
+# use backslahs to interpret ",$,\ as normal text
+# U can use ", if you are using triple qutes,"""
+
+str == "Hello" * "World
+
+# join 
+# split 
+# contains 
+# occursin
+# endswith
+# findall(isequal('a'),str)
+# findfirst(isequal('a'), str)
+# findlast(isequal('a'), str)
+# replace("Sherlock Holmes", "e" => "ee")
+
+# The 2. class done
+
